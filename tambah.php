@@ -11,7 +11,7 @@ require 'function.php';
 
 
 if (tambah($_POST)>0) {
-	echo "berhasil";
+	echo "sukses";
 	}else{
 		echo "gagal!";
 		echo_mysql_eror($conn);	
