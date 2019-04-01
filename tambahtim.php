@@ -1,3 +1,28 @@
+<?php
+
+//Koneksi ke db
+$conn = mysqli_connect("localhost","root","","aplikasi_lomba");
+
+//apakah tombol subit sudah
+if(isset($_POST["submit"])){
+       require 'function tambah tim.php';
+
+
+
+
+       if (tambah($_POST)>0) {
+             echo "sukses";
+      }else{
+            echo "gagal!";
+            echo_mysql_eror($conn); 
+
+
+     }
+}
+//cek apakah data berhasil ditambahkan atau tidak
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,31 +37,40 @@
       <h1>Daftarkan TIM</h1>
       <br>  
       <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Tim</label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama tim">
+        <label for="nama_tim">Nama Tim</label>
+        <input type="nama_tim" class="form-control" name="nama_tim" id="nama_tim" placeholder="Masukan nama tim">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Ketua</label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama ketua">
+        <label for="nama_ketua">Nama Ketua</label>
+        <input type="nama_ketua" class="form-control" name="nama_ketua" id="nama_ketua" placeholder="Masukan nama ketua">
+      </div>
+  
+      <div class="form-group">
+        <label for="anggota1">Nama Anggota 1</label>
+        <input type="text" class="form-control" name="anggota1" id="anggota1" placeholder="Masukan nama anggota 1">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Anggota 1</label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama anggota 1">
+        <label for="anggota2">Nama Anggota 2</label>
+        <input type="text" class="form-control" name="anggota2" id="anggota2" placeholder="Masukan nama anggota 2">
+      </div>
+        <div class="form-group">
+        <label for="anggota3">Nama Anggota 3</label>
+        <input type="text" class="form-control" name="anggota3" id="anggota3" placeholder="Masukan nama anggota 3">
+
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Anggota 2</label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama anggota 2">
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Anggota 3</label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama anggota 3">
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Nama Anggota 4</label>
-        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Masukan nama anggota 4">
+        <label for="angota4">Nama Anggota 4</label>
+        <input type="text" class="form-control" name="anggota4" id="anggota4" placeholder="Masukan nama anggota 4">
+     
       </div>
 
-      <button class="btn btn-primary">  Masukan Daftar </button>
+      <div class="btn btn-primary">
+         <button name="submit"> Masukkan daftar</button>
+
+        
+      </div>
+
+      <!-- <button class="btn btn-primary"name="submit" type="submit">  Masukan Daftar </button> -->
 
     </form>
 
