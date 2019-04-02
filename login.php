@@ -1,7 +1,6 @@
 ﻿<?php
-session_start();
 //koneksi
-$koneksi = new mysqli("localhost","root","","eadlomba");
+$koneksi = include 'database.php';
  ?>
 
 
@@ -44,11 +43,11 @@ $koneksi = new mysqli("localhost","root","","eadlomba");
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" name="username" />
+                                            <input type="text" class="form-control" name="username" placeholder="Username" />
                                         </div>
                                             <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control"  name="password" />
+                                            <input type="password" class="form-control"  name="password" placeholder="Password" />
                                         </div>
                                     <div class="form-group">
                                             <label class="checkbox-inline">
