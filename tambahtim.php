@@ -8,9 +8,10 @@ if(isset($_POST["submit"])){
  require 'function_tambah_tim.php';
 
  if (tambah($_POST)>0) {
-   echo "<h1> sukses</h1>";
+   echo "<script> alert('data berhasil ditambah')</script>";
  }else{
   echo "gagal!";
+   echo "<script> alert('data berhasil ditambah')</script>";
  
 
 
