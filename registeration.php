@@ -65,7 +65,7 @@ $koneksi = include 'database.php';
                                      
                                      <button class="btn btn-primary" name="create">Create Account</button>
                                     <hr />
-                                    Already Registered ?  <a href="login.html" >Login here</a>
+                                    Already Registered ?  <a href="login.php" >Login here</a>
                                     </form>
                                     <?php
                                     if(isset($_POST['create']))

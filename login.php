@@ -27,7 +27,7 @@ $koneksi = include 'database.php';
                 <br /><br />
                 <h2> Login</h2>
                
-                <h5>( Login yourself to get access )</h5>
+                <h5>( Login Untuk Mendapatkan Akses )</h5>
                  <br />
             </div>
         </div>
@@ -36,7 +36,7 @@ $koneksi = include 'database.php';
                   <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                        <strong>   Enter Details To Login </strong>  
+                        <strong>   Masukkan Data </strong>  
                             </div>
                             <div class="panel-body">
                                 <form role="form" method="post">
@@ -47,15 +47,13 @@ $koneksi = include 'database.php';
                                         </div>
                                             <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control"  name="password" placeholder="Password" />
+                                            <input type="password" class="form-control"  name="Password" placeholder="Password" />
                                         </div>
                                     <div class="form-group">
                                             <label class="checkbox-inline">
                                                 <input type="checkbox" /> Remember me
                                             </label>
-                                            <span class="pull-right">
-                                                   <a href="#" >Forget password ? </a> 
-                                            </span>
+                                            
                                         </div>
                                      
                                      <button class="btn btn-primary" name="login">Login</button>
@@ -65,7 +63,7 @@ $koneksi = include 'database.php';
                                     <?php
                                     if(isset($_POST['login']))
                                     {
-                                      $ambil = $koneksi->query("SELECT * FROM register WHERE username='$_POST[username]' AND password = '$_POST[password]'");
+                                      $ambil = $koneksi->query("SELECT * FROM daftar_akun WHERE username='$_POST[username]' AND Password = '$_POST[Password]'");
                                       $cocok = $ambil->num_rows;
                                       if($cocok==1)
                                       {
