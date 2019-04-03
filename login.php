@@ -39,7 +39,7 @@ $koneksi = include 'database.php';
                         <strong>   Masukkan Data </strong>  
                             </div>
                             <div class="panel-body">
-                                <form role="form" method="post" action="fungsi_login.php">
+                                <form role="form" method="post" action="ceklogin.php">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
