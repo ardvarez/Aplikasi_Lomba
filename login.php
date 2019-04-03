@@ -1,7 +1,6 @@
 ﻿<?php
-session_start();
 //koneksi
-$koneksi = new mysqli("localhost","root","","eadlomba");
+$koneksi = include 'database.php';
  ?>
 
 
@@ -28,7 +27,7 @@ $koneksi = new mysqli("localhost","root","","eadlomba");
                 <br /><br />
                 <h2> Login</h2>
                
-                <h5>( Login yourself to get access )</h5>
+                <h5>( Login Untuk Mendapatkan Akses )</h5>
                  <br />
             </div>
         </div>
@@ -37,26 +36,24 @@ $koneksi = new mysqli("localhost","root","","eadlomba");
                   <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                        <strong>   Enter Details To Login </strong>  
+                        <strong>   Masukkan Data </strong>  
                             </div>
                             <div class="panel-body">
                                 <form role="form" method="post">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" name="username" />
+                                            <input type="text" class="form-control" name="username" placeholder="Username" />
                                         </div>
                                             <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control"  name="password" />
+                                            <input type="password" class="form-control"  name="Password" placeholder="Password" />
                                         </div>
                                     <div class="form-group">
                                             <label class="checkbox-inline">
                                                 <input type="checkbox" /> Remember me
                                             </label>
-                                            <span class="pull-right">
-                                                   <a href="#" >Forget password ? </a> 
-                                            </span>
+                                            
                                         </div>
                                      
                                      <button class="btn btn-primary" name="login">Login</button>
@@ -66,7 +63,7 @@ $koneksi = new mysqli("localhost","root","","eadlomba");
                                     <?php
                                     if(isset($_POST['login']))
                                     {
-                                      $ambil = $koneksi->query("SELECT * FROM register WHERE username='$_POST[username]' AND password = '$_POST[password]'");
+                                      $ambil = $koneksi->query("SELECT * FROM daftar_akun WHERE username='$_POST[username]' AND Password = '$_POST[Password]'");
                                       $cocok = $ambil->num_rows;
                                       if($cocok==1)
                                       {

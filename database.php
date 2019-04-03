@@ -2,8 +2,8 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$namadatabase = "eadtraveler";
-$con = @mysqli_connect($host, $username, $password, $namadatabase);
+$namadatabase = "";
+$con = @mysqli_connect("localhost", "root", "", "aplikasi_lomba");
 
 if (!$con) {
     echo "Error: " . mysqli_connect_error();
