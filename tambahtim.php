@@ -8,9 +8,10 @@ if(isset($_POST["submit"])){
  require 'function_tambah_tim.php';
 
  if (tambah($_POST)>0) {
-   echo "<h1> sukses</h1>";
+   echo "<script> alert('data berhasil ditambah')</script>";
  }else{
   echo "gagal!";
+   echo "<script> alert('data berhasil ditambah')</script>";
  
 
 
@@ -26,7 +27,23 @@ if(isset($_POST["submit"])){
   <title></title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="tabeltim.php"?>Lihat Tim<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        
+  </div>
+</nav>
+</head>
 </head>
 <body>
 
@@ -61,7 +78,7 @@ if(isset($_POST["submit"])){
 
     </div>
 
-     <button class="btn btn-primary" name="submit">  Masukan Daftar </button>
+     <button class="btn btn-Dark" name="submit">  Masukan Daftar </button>
 
    <!-- <button class="btn btn-primary"name="submit" type="submit">  Masukan Daftar </button> -->
 
