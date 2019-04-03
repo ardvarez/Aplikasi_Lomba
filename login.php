@@ -39,15 +39,15 @@ $koneksi = include 'database.php';
                         <strong>   Masukkan Data </strong>  
                             </div>
                             <div class="panel-body">
-                                <form role="form" method="post">
+                                <form role="form" method="post" action="fungsi_login.php">
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" name="username" placeholder="Username" />
+                                            <input type="text" class="form-control" name="username" placeholder="username" />
                                         </div>
                                             <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control"  name="Password" placeholder="Password" />
+                                            <input type="password" class="form-control"  name="password" placeholder="Password" />
                                         </div>
                                     <div class="form-group">
                                             <label class="checkbox-inline">
@@ -56,28 +56,11 @@ $koneksi = include 'database.php';
                                             
                                         </div>
                                      
-                                     <button class="btn btn-primary" name="login">Login</button>
+                                     <button class="btn btn-primary" name="login" type="submit">Login</button>
                                     <hr />
                                     Not register ? <a href="registeration.php" >click here </a> 
                                     </form>
-                                    <?php
-                                    if(isset($_POST['login']))
-                                    {
-                                      $ambil = $koneksi->query("SELECT * FROM daftar_akun WHERE username='$_POST[username]' AND Password = '$_POST[Password]'");
-                                      $cocok = $ambil->num_rows;
-                                      if($cocok==1)
-                                      {
-                                        $_SESSION['register']=$ambil->fetch_assoc();
-                                        echo "<div class='alert alert-info'>Login Sukses!</div>";
-                                        echo "<meta http.equiv='refresh' content='1;url=index.php'>";
-                                      }
-                                      else
-                                      {
-                                        echo "<div class='alert alert-danger'>Login Gagal!</div>";
-                                        echo "<meta http.equiv='refresh' content='1;url=login.php'>";
-                                      }
-                                    }
-                                    ?>
+                                    
                             </div>
                            
                         </div>

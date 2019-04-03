@@ -43,7 +43,7 @@ $koneksi = include 'database.php';
 <br/>
                                         <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                                            <input type="text" class="form-control" name = "Nim"placeholder="NIM" />
+                                            <input type="text" class="form-control" name = "nim"placeholder="NIM" />
                                         </div>
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
@@ -51,15 +51,15 @@ $koneksi = include 'database.php';
                                         </div>
                                          <div class="form-group input-group">
                                             <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" name="Nama"placeholder="Nama" />
+                                            <input type="text" class="form-control" name="nama"placeholder="Nama" />
                                         </div>
                                         <div class="form-group input-group">
                                             <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" name="Angkatan"placeholder="Angkatan" />
+                                            <input type="text" class="form-control" name="angkatan"placeholder="Angkatan" />
                                         </div>
                                       <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control" name = "Password"placeholder="Enter Password" />
+                                            <input type="password" class="form-control" name = "password"placeholder="Enter Password" />
                                         </div>
                                      
                                      
@@ -70,7 +70,12 @@ $koneksi = include 'database.php';
                                     <?php
                                     if(isset($_POST['create']))
                                     {
-                                        $upload = $koneksi->query("INSERT INTO register SET username='$username', password='$password', confirm_pass='$confirm_pass',nama='$nama', email='$email'");
+                                        $upload = $koneksi->query("INSERT INTO `daftar_akun`(`Nim`, `username`, `Nama`, `Password`, `Angkatan`, `Kode_Asisten`, `Level`) VALUES ('$Nim', '$username', 'Nama', '$Angkatan', '$Password'");
+                                        echo "<script>alert('Akun Berhasil Didaftarkan');</script>";
+                                        echo "<script>location='login.php';</script>";
+                                    }else{
+                                        echo "<script>alert('Periksa Kembali Data Anda');</script>";
+                                        echo "<script>location='registeration.php';</script>";
                                     }
                                     ?>
                             </div>

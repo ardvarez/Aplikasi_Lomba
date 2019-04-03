@@ -30,7 +30,8 @@ CREATE TABLE `daftar_akun` (
   `NIM` varchar(10) NOT NULL,
   `NAMA` varchar(40) NOT NULL,
   `ANGKATAN` varchar(4) NOT NULL,
-  `KODE_ASISTEN` varchar(3) NOT NULL
+  `USERNAME` varchar(40) NOT NULL,
+  `PASSWORD` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
