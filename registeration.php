@@ -61,6 +61,15 @@ $koneksi = include 'database.php';
                                             <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
                                             <input type="password" class="form-control" name = "password"placeholder="Enter Password" />
                                         </div>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" name="kode_asisten"placeholder="Kode_Asisten" />
+                                        </div>
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" name="level"placeholder="Type 'admin' or 'user'" />
+                                        </div>
                                      
                                      
                                      <button class="btn btn-primary" name="create">Create Account</button>
@@ -70,7 +79,7 @@ $koneksi = include 'database.php';
                                     <?php
                                     if(isset($_POST['create']))
                                     {
-                                        $upload = $koneksi->query("INSERT INTO `daftar_akun`(`Nim`, `username`, `Nama`, `Password`, `Angkatan`, `Kode_Asisten`, `Level`) VALUES ('$Nim', '$username', 'Nama', '$Angkatan', '$Password'");
+                                        $upload = $koneksi->query("INSERT INTO `daftar_akun`(`NIM`, `USERNAME`, `NAMA`, `ANGKATAN`, `PASSWORD`, `KODE_ASISTEN`, `LEVEL`) VALUES ('$nim', '$username', 'nama', '$angkatan', '$password', '$kode_asisten', '$level'");
                                         echo "<script>alert('Akun Berhasil Didaftarkan');</script>";
                                         echo "<script>location='login.php';</script>";
                                     }else{
