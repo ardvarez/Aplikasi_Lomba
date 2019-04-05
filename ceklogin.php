@@ -18,6 +18,7 @@ $level=mysql_query("SELECT `LEVEL` FROM `daftar_akun` WHERE `USERNAME`='$usernam
 $row = mysql_fetch_assoc($level);
 // print_r($row['LEVEL']);
 if($count==1){
+$_SESSION['daftar_akun']=$sql->fetch_assoc();
 	if($row['LEVEL']=="admin") {
 		echo "Selamat Datang, Admin";
 		echo "<script>location='index.html';</script>";
